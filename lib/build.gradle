@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile gradleApi()
+    compile localGroovy()
+}
+
+
+apply plugin: 'maven'
+repositories {
+    mavenCentral()
+}
+group='com.gradle.module'
+version='1.0.0'
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'cwenlu'//bintray.com用户名
+    groupId = 'com.gradle.module'//jcenter上的路径
+    artifactId = 'lib'//项目名称
+    publishVersion = '1.0.0'//版本号
+//    desc = ''//描述，不重要
+//    website = ''//网站，不重要
+}

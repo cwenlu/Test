@@ -1,0 +1,33 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven {
+            url uri('repo')
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.gradle.module:lib:1.0.0'
+
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+apply plugin: 'gradle-module'
+
+moduleConfig{
+    moduleName='haha'
+    packageName='com.gradle.module'
+    pluginName='plugin'
+}
