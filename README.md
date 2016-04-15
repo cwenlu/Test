@@ -1,5 +1,7 @@
 # Test
 学习gradle插件编写的一个自动创建gradle module的插件
+##使用
+```gradle
 dependencies {
         classpath 'com.gradle.module:lib:1.0.0'
     }
@@ -14,3 +16,5 @@ moduleConfig{
     //插件民字（不是必须）
     pluginName='plugin'
 }
+```
+
