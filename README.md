@@ -13,7 +13,7 @@ moduleConfig{
     moduleName='haha'
     //包名
     packageName='com.gradle.module'
-    //插件民字（不是必须）
+    //插件名字（不是必须）
     pluginName='plugin'
 }
 ```
